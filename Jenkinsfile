@@ -1,5 +1,6 @@
 pipeline {
-	agent none
+    agent none
+    stages {
 	stage('Checkout') {
 		agent any
 		steps {
@@ -45,4 +46,5 @@ pipeline {
 			sh 'docker -H tcp://192.168.56.103:2375 run -d --name webserver -p 80:8080 ysk/tomcat:latest'
 		}
 	}
+    }
 }
